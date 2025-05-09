@@ -5,14 +5,18 @@
 </svelte:head>
 
 <script>
+
+    import { store_double_counter } from "../js/store.js";
     export let double_counter = 0;
 
     function counter_incr() {
         double_counter += 2;
+        $store_double_counter = double_counter;
     }
 
     function counter_decr() {
         double_counter -=3;
+        $store_double_counter = double_counter;
     }
 </script>
 
